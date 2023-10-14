@@ -1,0 +1,5 @@
+@media (max-width: 500px){
+    .about-hero{
+        height: 50vh !important;
+    }
+}

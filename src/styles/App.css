@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Roboto Slab', serif;
+    width: 100vw;
+    overflow-x: hidden;
+}
