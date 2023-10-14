@@ -9,9 +9,9 @@ const About = () => {
     
     <div className='about-con'>
         <header style={{backgroundColor:"rgba(4, 151, 60, 0.80)"}}>
-        <div className='container d-flex justify-content-between align-items-center about-hero gap-5'>
-            <div className=' w-50'>
-                <h1 className='text-light'>About Us</h1>
+        <div className='container d-flex justify-content-between align-items-center about-hero gap-3'>
+            <div className=' w-50 pe-5'>
+                <h1 className='text-light fs-2 fw-semibold pb-3'>About Us</h1>
                 <p className='pe-5 fw-light text-light'>
                 Lorem ipsum dolor sit amet consectetur. Adipiscing neque massa et netus ut luctus porta duis in. Lorem ipsum dolor sit amet consectetur. Adipiscing neque massa et netus ut luctus porta duis in.
                 </p>
