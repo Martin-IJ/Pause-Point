@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500;600;700&display=swap');
+
+.about-con *{
+    font-family: 'Roboto Slab', serif;
+}
+
+.about-hero{
+    height: 553px;
+    position: relative;
+}
