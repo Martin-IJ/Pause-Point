@@ -56,10 +56,10 @@ const Footer = () => {
             <div>
               <h4 className="fs-5 fw-semibold pt-1 pb-3">Quick Links</h4>
               <ul>
-                <Link to={""}>
+                <Link to={"/"}>
                   <li className="pb-2 text-center text-md-start">Home</li>
                 </Link>
-                <Link to={""}>
+                <Link to={"/about"}>
                   <li className="pb-2 text-center text-md-start">About Us</li>
                 </Link>
                 <Link to={""}>

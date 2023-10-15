@@ -27,10 +27,10 @@ const Navbar = () => {
                 : "hidden"
             }`}
           >
-            <NavLink to="home">
+            <NavLink to="/">
               <li>Home</li>
             </NavLink>
-            <Link to="">
+            <Link to="/about">
               <li>About Us</li>
             </Link>
             <Link to="">

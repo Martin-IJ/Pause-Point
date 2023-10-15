@@ -11,7 +11,6 @@ import person3 from '../assets/images/Ellipse 9.svg'
 import linkedin from "../assets/images/devicon_linkedin.svg"
 import twitter from "../assets/images/fa6-brands_x-twitter.png"
 import { Link } from 'react-router-dom'
-import Footer from '../compments/Footer'
 
 const About = () => {
   return (
@@ -117,7 +116,6 @@ const About = () => {
             </div>
             </main>
         </section>
-        <Footer/>
     </div>
   )
 }
