@@ -10,8 +10,8 @@ import NextSlide from "../assets/forward.png";
 import slideDb from "../compments/SlideDb";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { fadeIn } from "../compments/variants";
-import Download from "../compments/Download";
+import { fadeIn } from "../variants";
+import Download from "./Download";
 
 const Home = () => {
   const [ref, inView] = useInView({
