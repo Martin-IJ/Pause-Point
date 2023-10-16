@@ -12,7 +12,7 @@ import Dot1 from "../assets/dot1.png";
 import Dot2 from "../assets/dot2.png";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn } from "../compments/variants";
 import Download from "../compments/Download";
 
 const Home = () => {

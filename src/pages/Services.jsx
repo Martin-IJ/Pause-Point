@@ -9,7 +9,7 @@ import Accordion from "../compments/Accordion";
 import Download from "../compments/Download";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
-import { fadeIn } from "../variants";
+import { fadeIn } from "../compments/variants";
 
 const Services = () => {
   const [ref, inView] = useInView({
