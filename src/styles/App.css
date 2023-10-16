@@ -66,3 +66,26 @@ body {
   background-color: #fffde4;
   padding-bottom: 20px;
 }
+
+.modal-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: grid;
+  place-items: center;
+  transition: 0.3s ease-in-out all;
+  z-index: 100;
+}
+
+.modal-container{
+  position: relative;
+  width: 100%;
+  max-width: 612px;
+  height: 458px;
+  background-color: #FFFDE4;
+  border-radius: 15px;
+}

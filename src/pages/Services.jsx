@@ -7,7 +7,7 @@ import image2 from "../assets/images/image2.jpeg"
 import image3 from "../assets/images/image3.jpeg"
 import image4 from "../assets/images/image4.jpeg"
 import Accordion from '../compments/Accordion'
-import Download from "./Download";
+import Download from "../compments/Download";
 
 const Services = () => {
   return (

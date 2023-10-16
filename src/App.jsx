@@ -3,9 +3,10 @@ import Navbar from './compments/Navbar'
 import './styles/App.css'
 import { Routes, Route } from "react-router-dom";
 import About from './pages/About';
-import Download from './pages/Download'
+import Download from './compments/Download'
 import Footer from './compments/Footer';
 import Services from './pages/Services';
+import Contact from './pages/Contact';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path='/contact' element={<Contact />} />
       </Routes>
       <Footer/>
     </div>
