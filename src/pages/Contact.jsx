@@ -14,6 +14,10 @@ const Contact = () => {
     }, 2000);
   };
 
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className="bg-[#FFFDE4]">
       <div className="">
@@ -68,7 +72,7 @@ const Contact = () => {
             </button>
           </form>
         </div>
-        {isModalVisible && <Modal />}
+        {isModalVisible && <Modal closeModal={closeModal} />}
         <Download />
       </div>
     </div>
