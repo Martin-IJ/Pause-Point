@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-    font-family: 'Roboto Slab', serif;
-    width: 100vw;
-    overflow-x: hidden;
+  font-family: "Roboto Slab", serif;
+  width: 100vw;
+  overflow-x: hidden;
   font-family: "Roboto Slab", serif;
 }
 
@@ -67,7 +67,8 @@ body {
   padding-bottom: 20px;
 }
 
-.modal-overlay{
+/* Modal */
+.modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -81,11 +82,22 @@ body {
   z-index: 100;
 }
 
-.modal-container{
+.modal-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 612px;
   height: 458px;
-  background-color: #FFFDE4;
+  background-color: #fffde4;
   border-radius: 15px;
+}
+
+.closeBtn{
+  position: absolute;
+  top: .7rem;
+  right: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
 }
