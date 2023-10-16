@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Iphone from "../assets/iPhone 12 Pro-up.png";
 import Star1 from "../assets/Star 2.svg";
 import Line from "../assets/Element 09.svg";
@@ -8,20 +8,50 @@ import Bulb from "../assets/bulbFrame.png";
 import PreviousSlide from "../assets/previous.png";
 import NextSlide from "../assets/forward.png";
 import slideDb from "../compments/SlideDb";
+import Dot1 from "../assets/dot1.png";
+import Dot2 from "../assets/dot2.png";
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants";
 import Download from "../compments/Download";
 
 const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const itemsPerPage = 2;
+
+  const handleNextClick = () => {
+    if (currentIndex + itemsPerPage < slideDb.length) {
+      setCurrentIndex(currentIndex + itemsPerPage);
+    }
+  };
+
+  const handlePreviousClick = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - itemsPerPage);
+    }
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  const numberOfPairs = Math.ceil(slideDb.length / itemsPerPage);
+
   const [ref, inView] = useInView({
     threshold: 0.5,
   });
   return (
-    <div className="">
+    <div className="" ref={ref}>
       <div className="isolate flex justify-center bg-custom-green py-10">
         <div className="relative max-w-[85%] w-[100%] lg:flex items-center justify-between gap-10 text-white">
-          <div className="relative max-w-[750px] m-auto text-left space-y-3 w-[100%] lg:w-[50%]">
+          <motion.div
+            variants={fadeIn("right", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="relative max-w-[750px] m-auto text-left space-y-3 w-[100%] lg:w-[50%]"
+          >
             <h1 className="text-[50px] font-[600]">Pause Point</h1>
             <p className="text-[18px] lg:text-[22px]">
               Lorem ipsum dolor sit amet consectetur. Adipiscing neque massa et
@@ -35,21 +65,32 @@ const Home = () => {
               className="absolute -z-10 right-0 lg:right-20 bottom-0"
             />
             <button className="bannerBtn">Download App</button>
-          </div>
+          </motion.div>
 
           {/* Iphone */}
-          <div className="w-[100%] lg:w-[50%] flex justify-center">
+          <motion.div
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            whileInView={"show"}
+            viewport={{ once: false, amount: 0.3 }}
+            className="w-[100%] lg:w-[50%] flex justify-center"
+          >
             <img src={Iphone} alt="iphone" className="hidden lg:block" />
-            <img src={Star2} alt="star" className="absolute -z-10 top-0 right-0" />
-          </div>
-          <img src={Star1} alt="star" className="absolute -z-10 bottom-0 left-0" />
+            <img
+              src={Star2}
+              alt="star"
+              className="absolute -z-10 top-0 right-0"
+            />
+          </motion.div>
+          <img
+            src={Star1}
+            alt="star"
+            className="absolute -z-10 bottom-0 left-0"
+          />
         </div>
       </div>
 
-      <div
-        className="flex flex-col items-center gap-32 bg-[#D6EDCA] py-20"
-        ref={ref}
-      >
+      <div className="flex flex-col items-center gap-32 bg-[#D6EDCA] py-20">
         <div className="max-w-[85%] w-[100%] lg:flex items-center justify-between gap-10">
           <motion.div
             variants={fadeIn("right", 0.3)}
@@ -302,42 +343,72 @@ const Home = () => {
           <p className="text-[36px]">Testimonials</p>
 
           {/* Slides */}
-          <div className="relative w-[100%] overflow-x-hidden px-3 pb-36">
-            <div className="">
+          <div className="mb-36">
+            <div className="relative w-[100%] overflow-x-hidden px-5">
+            {currentIndex > 0 && (
               <img
                 src={PreviousSlide}
+                onClick={handlePreviousClick}
                 alt=""
-                className="absolute z-10 cursor-pointer left-0 top-0 bottom-0 m-auto"
+                className="absolute z-10 cursor-pointer left-7 top-[50%]"
               />
-              <div className="slider-container flex justify-around items-center gap-16">
-                {slideDb.map((slide) => {
-                  const { id, text, name, title, star, image } = slide;
-                  return (
-                    <div
-                      key={id}
-                      className="relative slideBox slide border-2 border-gray-400 min-w-[100%] lg:min-w-[47%] w-[100%] text-start space-y-7 py-12 px-10"
-                    >
-                      <p>{text}</p>
-                      <div className="md:flex items-center justify-between">
-                        <div className="flex items-center gap-5">
-                          <img src={image} alt="" />
-                          <p>
-                            <span>{name}</span>
-                            <br />
-                            {title}
-                          </p>
+              )}
+
+              {/* Slide mapping */}
+              <div className="slider-container w-full flex items-center gap-16">
+                {slideDb
+                  .slice(currentIndex, currentIndex + itemsPerPage)
+                  .map((slide) => {
+                    const { id, text, name, title, star, image } = slide;
+                    return (
+                      <div
+                        key={id}
+                        className="relative slideBox slide border-2 border-gray-400 min-w-[100%] lg:min-w-[48%] w-[100%] text-start space-y-7 py-12 px-10"
+                      >
+                        <p>{text}</p>
+                        <div className="md:flex items-center justify-between">
+                          <div className="flex items-center gap-5">
+                            <img src={image} alt="" />
+                            <p>
+                              <span className="font-semibold">{name}</span>
+                              <br />
+                              {title}
+                            </p>
+                          </div>
+                          <img src={star} alt="" className="mt-5 md:mt-0" />
                         </div>
-                        <img src={star} alt="" className="mt-5 md:mt-0" />
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
               </div>
+
+              {currentIndex + itemsPerPage < slideDb.length && (
               <img
                 src={NextSlide}
+                onClick={handleNextClick}
                 alt=""
-                className="absolute cursor-pointer z-50 right-0 top-0 bottom-0 m-auto"
+                className="absolute cursor-pointer z-50 right-2 top-[50%]"
               />
+              )}
+            </div>
+
+            {/* Slide Dots indicator */}
+            <div className="flex justify-center gap-2 mt-4">
+              {Array(numberOfPairs)
+                .fill()
+                .map((_, pairIndex) => (
+                  <div
+                    className="text-2xl cursor-pointer"
+                    key={pairIndex}
+                    onClick={() => goToSlide(pairIndex * itemsPerPage)}
+                  >
+                    {pairIndex === Math.floor(currentIndex / itemsPerPage) ? (
+                      <img src={Dot1} alt="" />
+                      ) : (
+                      <img src={Dot2} alt="" />
+                    )}
+                  </div>
+                ))}
             </div>
           </div>
         </div>

@@ -37,12 +37,12 @@ const Navbar = () => {
             <NavLink to="/about"  onClick={closeNavbar}>
               <li>About Us</li>
             </NavLink>
-            <Link to="/services">
+            <NavLink to="/services"  onClick={closeNavbar}>
               <li>Services</li>
-            </Link>
-            <Link to="/contact"  onClick={closeNavbar}>
+            </NavLink>
+            <NavLink to="/contact"  onClick={closeNavbar}>
               <li>Contact Us</li>
-            </Link>
+            </NavLink>
             <button className="downloadBtn">Download App</button>
           </ul>
         </div>

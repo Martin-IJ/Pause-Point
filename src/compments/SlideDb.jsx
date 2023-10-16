@@ -1,5 +1,6 @@
 import Girl1 from '../assets/girl1.png'
 import Girl2 from '../assets/girl2.png'
+import Modal from '../assets/modal-check.png'
 import Star from '../assets/star1.png'
 
 const slideDb = [
@@ -25,7 +26,7 @@ const slideDb = [
         name: 'Aisha Oye',
         title: 'Resident',
         star: Star,
-        image: Girl2,
+        image: Modal,
     },
     {
         id: 4,
@@ -49,7 +50,7 @@ const slideDb = [
         name: 'Adura Koko',
         title: 'Resident',
         star: Star,
-        image: Girl1,
+        image: Modal,
     },
 ];
 
