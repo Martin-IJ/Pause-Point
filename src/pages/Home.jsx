@@ -19,11 +19,11 @@ const Home = () => {
   });
   return (
     <div className="">
-      <div className="flex justify-center bg-custom-green py-10">
+      <div className="isolate flex justify-center bg-custom-green py-10">
         <div className="relative max-w-[85%] w-[100%] lg:flex items-center justify-between gap-10 text-white">
-          <div className="relative max-w-[750px] m-auto text-center lg:text-start w-[100%] lg:w-[50%]">
+          <div className="relative max-w-[750px] m-auto text-left space-y-3 w-[100%] lg:w-[50%]">
             <h1 className="text-[50px] font-[600]">Pause Point</h1>
-            <p className="text-[22px]">
+            <p className="text-[18px] lg:text-[22px]">
               Lorem ipsum dolor sit amet consectetur. Adipiscing neque massa et
               netus ut luctus porta duis in. Lorem ipsum dolor sit amet
               consectetur. Adipiscing neque massa et netus ut luctus porta duis
@@ -32,17 +32,17 @@ const Home = () => {
             <img
               src={Line}
               alt="line"
-              className="absolute right-0 lg:right-20 bottom-0"
+              className="absolute -z-10 right-0 lg:right-20 bottom-0"
             />
-            <button className="bannerBtn mt-5">Download App</button>
+            <button className="bannerBtn">Download App</button>
           </div>
 
           {/* Iphone */}
           <div className="w-[100%] lg:w-[50%] flex justify-center">
             <img src={Iphone} alt="iphone" className="hidden lg:block" />
-            <img src={Star2} alt="star" className="absolute top-0 right-0" />
+            <img src={Star2} alt="star" className="absolute -z-10 top-0 right-0" />
           </div>
-          <img src={Star1} alt="star" className="absolute bottom-0 left-0" />
+          <img src={Star1} alt="star" className="absolute -z-10 bottom-0 left-0" />
         </div>
       </div>
 
