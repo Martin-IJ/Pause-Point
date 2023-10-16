@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/services.css";
 import "../styles/accordion.css";
 import d from "../assets/images/Frame 48.svg";
 import image1 from "../assets/images/image1.jpeg";
